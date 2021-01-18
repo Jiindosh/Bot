@@ -12,7 +12,7 @@ async def on_ready():
 
 @client.command()
 async def ban(ctx, user: discord.User, *, reason="Aucune raison n'a été spécifiée."):
-    # await ctx.guild.ban(user, reason = reason)
+    await ctx.guild.ban(user, reason = reason)
     embed = discord.Embed(title="**Bannissement**", description="Ce membre a été banni du serveur",
                           url="https://www.discord.gg/a7KHDT9gFT", colour=discord.Colour.red())
     embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/796861724366995457.gif")
@@ -25,7 +25,7 @@ async def ban(ctx, user: discord.User, *, reason="Aucune raison n'a été spéci
 
 @client.command()
 async def kick(ctx, user: discord.User, *, reason="Aucune raison n'a été spécifiée."):
-    # await ctx.guild.kick(user, reason = reason)
+    await ctx.guild.kick(user, reason = reason)
     embed = discord.Embed(title="**Expulsion**", description="Ce membre a été expulsé du serveur",
                           url="https://www.discord.gg/a7KHDT9gFT", colour=discord.Colour.orange())
     embed.set_thumbnail(url="https://i.giphy.com/media/dYQfIcryc28bS6132z/giphy.gif")
