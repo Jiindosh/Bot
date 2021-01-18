@@ -18,7 +18,7 @@ async def ban(ctx, user: discord.User, *, reason="Aucune raison n'a été spéci
     embed.add_field(name="Membre banni : ", value=user.name, inline=False)
     embed.add_field(name="Modérateur : ", value=ctx.author.name, inline=False)
     embed.add_field(name="Raison", value=reason, inline=True)
-    embed.set_footer(text="discord.gg/a7KHDT9gFT+dyskal")
+    embed.set_footer(text="discord.gg/a7KHDT9gFT")
     await ctx.send(embed=embed)
 
 
@@ -31,7 +31,7 @@ async def kick(ctx, user: discord.User, *, reason="Aucune raison n'a été spéc
     embed.add_field(name="Membre expulsé : ", value=user.name, inline=False)
     embed.add_field(name="Modérateur : ", value=ctx.author.name, inline=False)
     embed.add_field(name="Raison", value=reason, inline=True)
-    embed.set_footer(text="discord.gg/a7KHDT9gFT+dyskal")
+    embed.set_footer(text="discord.gg/a7KHDT9gFT")
     await ctx.send(embed=embed)
 
 
