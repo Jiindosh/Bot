@@ -9,7 +9,6 @@ token = os.environ.get('TOKEN')
 async def on_ready():
     print('Bot prêt')
 
-
 @client.command()
 async def ban(ctx, user: discord.User, *, reason="Aucune raison n'a été spécifiée."):
     await ctx.guild.ban(user, reason = reason)
