@@ -1,8 +1,9 @@
 import discord
 from discord.ext import commands
+import os
 
 client = commands.Bot(command_prefix='&')
-
+token = os.environ.get('TOKEN')
 
 @client.event
 async def on_ready():
@@ -35,4 +36,4 @@ async def kick(ctx, user: discord.User, *, reason="Aucune raison n'a été spéc
     await ctx.send(embed=embed)
 
 
-client.run('ODAwNjQ5OTE2MTEyMDQ0MTAz.YAVNVw.O5Tgiq-koBtzx3HHBO5Tr22oy00')
+client.run(token)
