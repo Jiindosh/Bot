@@ -21,7 +21,6 @@ async def ban(ctx, user: discord.User, *, reason="Aucune raison n'a été spéci
     embed.set_footer(text="discord.gg/a7KHDT9gFT")
     await ctx.send(embed=embed)
 
-
 @client.command()
 async def kick(ctx, user: discord.User, *, reason="Aucune raison n'a été spécifiée."):
     await ctx.guild.kick(user, reason = reason)
