@@ -33,5 +33,4 @@ async def kick(ctx, user: discord.User, *, reason="Aucune raison n'a été spéc
     embed.set_footer(text="discord.gg/a7KHDT9gFT")
     await ctx.send(embed=embed)
 
-
 client.run(token)
