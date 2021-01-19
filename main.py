@@ -34,13 +34,13 @@ async def kick(ctx, user: discord.User, *, reason="Aucune raison n'a été spéc
     embed.set_footer(text="discord.gg/a7KHDT9gFT")
     await ctx.send(embed=embed)
 
-@client.event
-async def on_message(message):
-    if message.content.startswith("&del"):
-        number = int(message.content.split()[1])
-        messages = await message.channel.history(limit= number + 1).flatten()
+@client.command(name='del')
+async def delete(ctx, number_of_messages: int):
+    messages = await ctx.channel.history(limit=number_of_messages + 1).flatten()
 
-        for each_message in messages:
-            await each_message.delete()
+    for each_messages in messages:
+        await each_messages.delete()
+
+
 
 client.run(token)
