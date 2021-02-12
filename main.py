@@ -45,5 +45,4 @@ async def delete(ctx, number_of_messages: int):
     for each_messages in messages:
         await each_messages.delete()
 
-
 client.run(token)
