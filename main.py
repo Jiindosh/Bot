@@ -3,13 +3,13 @@ from os import environ
 import discord
 from discord.ext import commands
 
-client = commands.Bot(command_prefix='&')
+client = commands.Bot(command_prefix='*')
 token = environ.get('TOKEN')
 
 
 @client.event
 async def on_ready():
-    print('Soldat Mécanique en Ligne.')
+    print('Jinbot en Ligne.')
 
 
 @client.command()
