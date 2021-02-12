@@ -45,7 +45,7 @@ async def delete(ctx, number_of_messages: int):
     for each_messages in messages:
         await each_messages.delete()
 
-@bot.command()
+@client.command()
 async def userinfo(ctx, *, user: discord.Member = None):
     if user is None:
         user = ctx.author
