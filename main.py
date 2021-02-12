@@ -45,8 +45,8 @@ async def delete(ctx, number_of_messages: int):
     for each_messages in messages:
         await each_messages.delete()
 
-@client.command()
-async def userinfo(ctx, *, user: discord.User = None): # b'\xfc'
+@bot.command()
+async def userinfo(ctx, *, user: discord.Member = None):
     if user is None:
         user = ctx.author
     date_format = "%a, %d %b %Y %I:%M %p"
