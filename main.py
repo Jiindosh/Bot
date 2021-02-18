@@ -21,7 +21,7 @@ async def ban(ctx, user: discord.User, *, reason="Aucune raison n'a été spéci
     embed.add_field(name="Membre banni : ", value=user.name, inline=False)
     embed.add_field(name="Modérateur : ", value=ctx.author.name, inline=False)
     embed.add_field(name="Raison", value=reason, inline=True)
-    embed.set_footer(text="discord.gg/a7KHDT9gFT")
+    embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992 ")
     await ctx.send(embed=embed)
 
 
@@ -34,7 +34,7 @@ async def kick(ctx, user: discord.User, *, reason="Aucune raison n'a été spéc
     embed.add_field(name="Membre expulsé : ", value=user.name, inline=False)
     embed.add_field(name="Modérateur : ", value=ctx.author.name, inline=False)
     embed.add_field(name="Raison", value=reason, inline=True)
-    embed.set_footer(text="discord.gg/a7KHDT9gFT")
+    embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992 ")
     await ctx.send(embed=embed)
 
 
@@ -44,6 +44,23 @@ async def delete(ctx, number_of_messages: int):
 
     for each_messages in messages:
         await each_messages.delete()
+
+@client.command(name='ui')
+async def userinfo(ctx, member: discord.Member = None):
+    if not member:  # if member is no mentioned
+        member = ctx.message.author  # set member as the author
+    embed = discord.Embed(title=f"**Informations à propos de {member}**", colour=discord.Color.gold())
+    embed.set_thumbnail(url="https://media.giphy.com/media/0GsNMsRwDKKMjiwIe5/giphy.gif")
+    embed.add_field(name="Nom de l'utilisateur : ", value=member.name, inline=False)
+    embed.add_field(name="ID de l'utilisateur : ", value=member.id, inline=False)
+    embed.add_field(name="Compte crée le ", value=member.created_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"))
+    embed.add_field(name="A rejoint le serveur le ", value=member.joined_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"))
+    embed.add_field(name="Rôle le plus haut", value=member.top_role.mention)
+    embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992 ")
+    await ctx.send(embed=embed)
+
+
+
 
 
 client.run(token)
