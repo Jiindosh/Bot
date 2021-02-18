@@ -10,7 +10,7 @@ token = environ.get('TOKEN')
 @client.event
 async def on_ready():
     print('Jinbot en Ligne.')
-
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="mon code"))
 
 @client.command()
 async def ban(ctx, user: discord.User, *, reason="Aucune raison n'a été spécifiée."):
@@ -51,11 +51,11 @@ async def userinfo(ctx, member: discord.Member = None):
         member = ctx.message.author  # set member as the author
     embed = discord.Embed(title=f"**Informations à propos de {member}**", colour=discord.Color.gold())
     embed.set_thumbnail(url="https://media.giphy.com/media/0GsNMsRwDKKMjiwIe5/giphy.gif")
-    embed.add_field(name="Nom de l'utilisateur : ", value=member.name, inline=False)
-    embed.add_field(name="ID de l'utilisateur : ", value=member.id, inline=False)
-    embed.add_field(name="Compte crée le ", value=member.created_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"))
-    embed.add_field(name="A rejoint le serveur le ", value=member.joined_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"))
-    embed.add_field(name="Rôle le plus haut", value=member.top_role.mention)
+    embed.add_field(name="Nom de l'utilisateur : ", value=member.name, inline=True)
+    embed.add_field(name="ID de l'utilisateur : ", value=member.id, inline=True)
+    embed.add_field(name="Compte crée le ", value=member.created_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"), inline=True)
+    embed.add_field(name="A rejoint le serveur le ", value=member.joined_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"), inline=True)
+    embed.add_field(name="Rôle le plus haut", value=member.top_role.mention, inline=True)
     embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992 ")
     await ctx.send(embed=embed)
 
@@ -67,14 +67,8 @@ async def info(ctx):
     embed.add_field(name="Modération :", value="• *kick (membre) [raison] : Permet de bannir un utilisateur du serveur "
                                                "\n• *ban (membre) [raison] : Permet de bannir un utilisateur du serveur", inline=False)
     embed.add_field(name="Informations :", value="• *ui (membre) : Affiche des informations sur un utilisateur", inline=False)
-    embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992 ")
+    embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992")
     await ctx.send(embed=embed)
-
-
-
-
-
-
 
 #•
 client.run(token)
