@@ -61,12 +61,12 @@ async def userinfo(ctx, member: discord.Member = None):
 
 @client.command(name="aide")
 async def info(ctx):
-    embed = discord.Embed(title="Voici une liste des commandes disponibles : (...) = Argument obligatoire | [...] = Argument optionnel",
+    embed = discord.Embed(title="Voici une liste des commandes disponibles : \n(...) = Argument obligatoire | [...] = Argument optionnel",
                           colour=discord.Colour.magenta())
     embed.set_thumbnail(url="https://media.giphy.com/media/fssa6xzdaLuDP938Y9/giphy.gif")
-    embed.add_field(name="Modération : Expulsion ", value="*kick (membre) [raison] : Permet de bannir un utilisateur du serveur", inline=False)
-    embed.add_field(name="Modération : Bannissement", value="*ban (membre) [raison] : Permet de bannir un utilisateur du serveur", inline=False)
-    embed.add_field(name="Informations : Afficher des informations à propos d'un utilisateur", value="*ui (membre) : Affiche des informations sur un utilisateur", inline=False)
+    embed.add_field(name="Modération :", value="• *kick (membre) [raison] : Permet de bannir un utilisateur du serveur "
+                                               "\n• *ban (membre) [raison] : Permet de bannir un utilisateur du serveur", inline=False)
+    embed.add_field(name="Informations :", value="• *ui (membre) : Affiche des informations sur un utilisateur", inline=False)
     embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992 ")
     await ctx.send(embed=embed)
 
@@ -76,5 +76,5 @@ async def info(ctx):
 
 
 
-
+#•
 client.run(token)
