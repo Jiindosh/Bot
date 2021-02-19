@@ -19,6 +19,20 @@ async def ban(ctx, user: discord.User, *, reason="Aucune raison n'a été spéci
                           url="https://www.discord.gg/a7KHDT9gFT", colour=discord.Colour.red())
     embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/796861724366995457.gif")
     embed.add_field(name="Membre banni : ", value=user.name, inline=False)
+    embed.add_field(name="ID : ", value=user.id, inline=False)
+    embed.add_field(name="Modérateur : ", value=ctx.author.name, inline=False)
+    embed.add_field(name="Raison", value=reason, inline=True)
+    embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992 ")
+    await ctx.send(embed=embed)
+
+@client.command()
+async def unban(ctx, user: discord.User, *, reason="Aucune raison n'a été spécifiée."):
+    await ctx.guild.unban(user, reason=reason)
+    embed = discord.Embed(title="**Débannissement**", description="Ce membre a été débanni du serveur",
+                          url="https://www.discord.gg/a7KHDT9gFT", colour=discord.Colour.orange())
+    embed.set_thumbnail(url="https://media.giphy.com/media/r8iF8ZVnq2bQN5hwVt/giphy.gif")
+    embed.add_field(name="Membre débanni : ", value=user.name, inline=False)
+    embed.add_field(name="ID : ", value=user.id, inline=False)
     embed.add_field(name="Modérateur : ", value=ctx.author.name, inline=False)
     embed.add_field(name="Raison", value=reason, inline=True)
     embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992 ")
@@ -32,6 +46,7 @@ async def kick(ctx, user: discord.User, *, reason="Aucune raison n'a été spéc
                           url="https://www.discord.gg/a7KHDT9gFT", colour=discord.Colour.orange())
     embed.set_thumbnail(url="https://media.tenor.com/images/27f16871c55a3376fa4bfdd76ac2ab5c/tenor.gif")
     embed.add_field(name="Membre expulsé : ", value=user.name, inline=False)
+    embed.add_field(name="ID : ", value=user.id, inline=False)
     embed.add_field(name="Modérateur : ", value=ctx.author.name, inline=False)
     embed.add_field(name="Raison", value=reason, inline=True)
     embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992 ")
@@ -68,6 +83,14 @@ async def info(ctx):
                                                "\n• *ban (membre) [raison] : Permet de bannir un utilisateur du serveur", inline=False)
     embed.add_field(name="Informations :", value="• *ui (membre) : Affiche des informations sur un utilisateur", inline=False)
     embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992")
+    await ctx.send(embed=embed)
+
+@client.event
+async def on_member_join(ctx):
+    channel = client.get_channel(800715089845813258) # ID du channel
+    embed = discord.Embed(name=f"Bienvenue à {discord.Member.mention} sur {discord.Guild.name} !", colour=discord.Colour.green )
+    embed.add_field(name=f"Tu es le {discord.Guild.member_count}e membre du serveur !", value="Bienvenue !")
+    await channel.send(f"Bienvenue a {discord.Member.mention} sur le serveur !")
     await ctx.send(embed=embed)
 
 #•
