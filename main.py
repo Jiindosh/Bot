@@ -79,18 +79,11 @@ async def info(ctx):
     embed = discord.Embed(title="Voici une liste des commandes disponibles : \n(...) = Argument obligatoire | [...] = Argument optionnel",
                           colour=discord.Colour.magenta())
     embed.set_thumbnail(url="https://media.giphy.com/media/fssa6xzdaLuDP938Y9/giphy.gif")
-    embed.add_field(name="Modération :", value="• *kick (membre) [raison] : Permet de bannir un utilisateur du serveur "
-                                               "\n• *ban (membre) [raison] : Permet de bannir un utilisateur du serveur", inline=False)
+    embed.add_field(name="Modération :", value="  • *kick (membre) [raison] : Permet d'expulser un utilisateur du serveur "
+                                               "\n• *ban (membre) [raison] : Permet de bannir un utilisateur du serveur"
+                                               "\n• *unban (ID) [raison] : Permet de débannir un utilisateur du serveur", inline=False)
     embed.add_field(name="Informations :", value="• *ui (membre) : Affiche des informations sur un utilisateur", inline=False)
     embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992")
-    await ctx.send(embed=embed)
-
-@client.event
-async def on_member_join(ctx):
-    channel = client.get_channel(800715089845813258) # ID du channel
-    embed = discord.Embed(name=f"Bienvenue à {discord.Member.mention} sur {discord.Guild.name} !", colour=discord.Colour.green )
-    embed.add_field(name=f"Tu es le {discord.Guild.member_count}e membre du serveur !", value="Bienvenue !")
-    await channel.send(f"Bienvenue a {discord.Member.mention} sur le serveur !")
     await ctx.send(embed=embed)
 
 #•
