@@ -22,7 +22,7 @@ async def ban(ctx, user: discord.User, *, reason="Aucune raison n'a été spéci
     embed.add_field(name="ID : ", value=user.id, inline=False)
     embed.add_field(name="Modérateur : ", value=ctx.author.name, inline=False)
     embed.add_field(name="Raison", value=reason, inline=True)
-    embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992 ")
+    embed.set_footer(text="Bot développé par ꒻꒐ꋊ꒯ꄲꇙꁝ_#2960 ")
     await ctx.send(embed=embed)
 
 @client.command()
@@ -35,7 +35,7 @@ async def unban(ctx, user: discord.User, *, reason="Aucune raison n'a été spé
     embed.add_field(name="ID : ", value=user.id, inline=False)
     embed.add_field(name="Modérateur : ", value=ctx.author.name, inline=False)
     embed.add_field(name="Raison", value=reason, inline=True)
-    embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992 ")
+    embed.set_footer(text="Bot développé par ꒻꒐ꋊ꒯ꄲꇙꁝ_#2960 ")
     await ctx.send(embed=embed)
 
 
@@ -49,7 +49,7 @@ async def kick(ctx, user: discord.User, *, reason="Aucune raison n'a été spéc
     embed.add_field(name="ID : ", value=user.id, inline=False)
     embed.add_field(name="Modérateur : ", value=ctx.author.name, inline=False)
     embed.add_field(name="Raison", value=reason, inline=True)
-    embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992 ")
+    embed.set_footer(text="Bot développé par ꒻꒐ꋊ꒯ꄲꇙꁝ_#2960 ")
     await ctx.send(embed=embed)
 
 
@@ -71,7 +71,7 @@ async def userinfo(ctx, member: discord.Member = None):
     embed.add_field(name="Compte crée le ", value=member.created_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"), inline=True)
     embed.add_field(name="A rejoint le serveur le ", value=member.joined_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"), inline=True)
     embed.add_field(name="Rôle le plus haut", value=member.top_role.mention, inline=True)
-    embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992 ")
+    embed.set_footer(text="Bot développé par ꒻꒐ꋊ꒯ꄲꇙꁝ_#2960 ")
     await ctx.send(embed=embed)
 
 @client.command(name="aide")
@@ -83,7 +83,7 @@ async def info(ctx):
                                                "\n• *ban (membre) [raison] : Permet de bannir un utilisateur du serveur"
                                                "\n• *unban (ID) [raison] : Permet de débannir un utilisateur du serveur", inline=False)
     embed.add_field(name="Informations :", value="• *ui (membre) : Affiche des informations sur un utilisateur", inline=False)
-    embed.set_footer(text="Bot développé par 𝓙ɪήժøƨħ_,Ƭħε Ðɪƨħøήørεժ#7992")
+    embed.set_footer(text="Bot développé par ꒻꒐ꋊ꒯ꄲꇙꁝ_#2960")
     await ctx.send(embed=embed)
 
 #•
